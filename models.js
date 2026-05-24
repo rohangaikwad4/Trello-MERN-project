@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://rohan:rohan123@rohan.nl5zlot.mongodb.net/trello");
+mongoose.connect(process.env.MONGODB_URI);
 
 const userSchema = new mongoose.Schema({
     username: String,
