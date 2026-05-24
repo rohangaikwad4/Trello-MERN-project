@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trello Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div id="page-auth">
+            <div class="auth-container">
+                <h1>Trello Clone</h1>
+                <div class="auth-tabs">
+                    <button class="tab active" data-tab="signin">Sign In</button>
+                    <button class="tab" data-tab="signup">Sign Up</button>
+                </div>
+                <form id="form-signin">
+                    <input type="text" id="signin-username" placeholder="Username" required>
+                    <input type="password" id="signin-password" placeholder="Password" required>
+                    <button type="submit">Sign In</button>
+                    <p class="error" id="signin-error"></p>
+                </form>
+                <form id="form-signup" style="display:none">
+                    <input type="text" id="signup-username" placeholder="Username" required>
+                    <input type="password" id="signup-password" placeholder="Password" required>
+                    <button type="submit">Sign Up</button>
+                    <p class="error" id="signup-error"></p>
+                </form>
+            </div>
+        </div>
+
+        <div id="page-dashboard" style="display:none">
+            <header>
+                <h1>Trello Clone</h1>
+                <button id="btn-logout">Logout</button>
+            </header>
+            <main>
+                <div class="sidebar">
+                    <h2>Organizations</h2>
+                    <button id="btn-create-org">+ New Organization</button>
+                    <div id="org-list"></div>
+                </div>
+                <div class="content">
+                    <div id="org-view" style="display:none">
+                        <div class="org-header">
+                            <h2 id="org-title"></h2>
+                            <p id="org-desc"></p>
+                            <span id="org-admin"></span>
+                        </div>
+                        <div class="org-actions">
+                            <div class="members-section">
+                                <h3>Members</h3>
+                                <div id="member-list"></div>
+                                <div class="add-member">
+                                    <input type="text" id="member-username" placeholder="Add member by username">
+                                    <button id="btn-add-member">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="boards-section">
+                            <h3>Boards</h3>
+                            <div class="create-board">
+                                <input type="text" id="board-title" placeholder="Board title">
+                                <button id="btn-create-board">Create Board</button>
+                            </div>
+                            <div id="board-list"></div>
+                        </div>
+                    </div>
+                    <div id="board-view" style="display:none">
+                        <button id="btn-back-org" class="back-btn">← Back to Organization</button>
+                        <h2 id="board-title-header"></h2>
+                        <div class="board-columns">
+                            <div class="column" data-status="todo">
+                                <h3>To Do</h3>
+                                <div class="card-list" id="list-todo"></div>
+                                <div class="add-card">
+                                    <input type="text" placeholder="Card title" class="card-title-input" data-status="todo">
+                                    <button class="btn-add-card" data-status="todo">+</button>
+                                </div>
+                            </div>
+                            <div class="column" data-status="in-progress">
+                                <h3>In Progress</h3>
+                                <div class="card-list" id="list-in-progress"></div>
+                                <div class="add-card">
+                                    <input type="text" placeholder="Card title" class="card-title-input" data-status="in-progress">
+                                    <button class="btn-add-card" data-status="in-progress">+</button>
+                                </div>
+                            </div>
+                            <div class="column" data-status="done">
+                                <h3>Done</h3>
+                                <div class="card-list" id="list-done"></div>
+                                <div class="add-card">
+                                    <input type="text" placeholder="Card title" class="card-title-input" data-status="done">
+                                    <button class="btn-add-card" data-status="done">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
